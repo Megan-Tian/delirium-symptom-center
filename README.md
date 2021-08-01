@@ -20,8 +20,7 @@ I started by drawing wireframes on paper, then built the site "skeleton", creati
 ## Challenges I ran into
 Navigating and having to somehow "link" two databases was challenging, though I figured out a semi-workaround with a required radio button on the CAM form whose value was linked to the current account username. 
 
-The most challenging part was displaying the data.
-I managed to retrieve the JSON data from the server in script.js, and wrote what I believe is a close-to-correct interpretation of a JS filter to hide certain elements. However, the filter doesn't work as intended and displays entire (unfiltered) JSON string when line 112 in script.js is uncommented (when that line is commented out, no data appears). To fix this, I believe I would need to find a way to set a JS variable to the username when the login form is filled out, and then export that variable onto script.js so I can use it in the later filter comparison. 
+The most challenging part was displaying the data. I managed to retrieve the JSON data from the server in script.js, and wrote what I believe is a close-to-correct interpretation of a JS filter to hide certain elements. However, the filter doesn't work as intended and displays entire (unfiltered) JSON string when line 112 in script.js is uncommented (when that line is commented out, no data appears). I believe I have correctly retrieved the current user's information using fetch() on the user account databaase, and the error probably lies in the lines between that and where appendChild() is called. 
 
 ## Accomplishments that I am proud of 
 Prior to this project, I had written maybe less than 10 lines of JS. I'm proud to say I wrote more than 10 lines of JS today, even though it didn't quite work out the way I intended. This project was rather ambitious, and I'm glad I went for it. 
