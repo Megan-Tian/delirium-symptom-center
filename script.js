@@ -40,20 +40,16 @@ class entry {
 }
 */
 
-// the username of the patient currrently logged in. Gets data through a <script> during login
-var currentUser = "";
-
-/* supposed to be called by onclick in login.html, didn't work
-function getCurrentUser() {
-	alert("Logged in! Signed in as ");
-	currentUser = document.getElementById("current_user")
-		.value; // retrieve through <script>
-}
-*/
-
 // get all symptom entries from logged-in patient
 
 async function grabEntries() {
+	// get current account username
+	const resp = await fetch('/~/delirium-symptom-center2/account/profile')
+	const ans = await resp.json();
+	show(ans);
+	
+	var currentUser = ans.username;
+
 	// access patient-data database, store the response in "resp"
 	const resp = await fetch('/~/delirium-symptom-center2/open/patient-data?all=true');
 	const json = await resp.json(); // these are JS objects, because when "results.innerHTML = json" runs the page displays several [object Object] comma separated sets
@@ -69,42 +65,51 @@ async function grabEntries() {
 		.length; // number of JS objects server returned
 	------------------- */
 
-	var totalEntryCount = 8 // this is currently hardcoded (not a good idea) because I wasn't sure if the block about with the Object.keys and .length was working
-	var entryUsername = "",
-		f1 = "",
-		f2 = "",
-		f3 = "",
-		f4 = "",
-		date = "";
+	var totalEntryCount = 13 // this is currently hardcoded (not a good idea) because I wasn't sure if the block about with the Object.keys and .length was working
+	
+	var entryUsername = "";
+	var	f1 = "";
+	var	f2 = "";
+	var	f3 = "";
+	var	f4 = "";
+	var	date = "";
 
 	for (var i = 0; i < totalEntryCount; i++) {
-		entryUsername = json[i].username; // like Java syntax
+		entryUsername = json[i].data.username; // like Java syntax
 
 		if (currentUser === entryUsername) { // === compares value and type
 
 			// TODO may have to check if each feature is null
 
 			date = date.toLocaleString(json[i].dateCreated);
-			f1 = json[i].feature1;
-			f2 = json[i].feature2;
-			f3 = json[i].feature3;
-			f4 = json[i].feature4;
+			f1 = json[i].data.feature1;
+			f2 = json[i].data.feature2;
+			f3 = json[i].data.feature3;
+			f4 = json[i].data.feature4;
 
 			const div = document.createElement('div');
 			div.innerHTML = `
-				<div>${date}</div>
+				${date}
+				${f1}
+				${f2}
+				${f3}
+				${f4}
+			`
+			/*
+			<div>${date}</div>
 				<div>${f1}</div>
 				<div>${f2}</div>
 				<div>${f3}</div>
 				<div>${f4}</div>
-			`
+			*/
+			
 			results.appendChild(div);
 		}
 
 	}
 
 	// comment out the line below to not show the entire unfilted JSON string
-	results.innerHTML = '<pre>' + JSON.stringify(json, null, 8) + '<pre>'
+	// results.innerHTML = '<pre>' + JSON.stringify(json, null, 8) + '<pre>'
 
 }
 
