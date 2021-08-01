@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="stylesheet" href="styles.css">
+		<script type="module" src="script.js"></script>
+
+		<link rel="shortcut icon" type="image/jpg" href="Logo.png" />
+		<title>Delirium Symptom Center</title>
+	</head>
+
+
+	<body>
+		<nav>
+			<ul>
+				<!-- TODO - Attempt to put a non-button logo image on the nav bar
+				<li style="float:left"><img src='Logo.png' alt='Delirium Symptom Center logo' width="50px" height="50px"></li> 
+				-->
+
+				{{#private}}
+					<!-- Visible IF user is LOGGED IN -->
+					<li><a onclick='logout()'>Logout</a></li>
+				{{/private}}
+
+				<li><a href='home'>Home</a></li>
+				<li><a href='resources'>Resources</a></li>
+
+				{{^private}}
+					<!-- Visible IF user is LOGGED OUT -->
+					<li><a href='signup'>Signup</a></li>
+					<li><a href='login'>Login</a></li>
+				{{/private}}
+
+				{{#private}}
+					<li><a href='track-symptoms'>Track Symptoms</a></li>
+					<li><a href='symptom-history'>Symptom History</a></li>
+					<li><a href='account'>Account</a></li>
+				{{/private}}
+			</ul>
+		</nav>
+
+		<header>
+			<h1>Delirium.</h1>
+			<img src='Logo2.png' alt='delirium symptom center logo' width=200px height=200px style="align:center">
+		</header>
+
+		<main>
+			<div>
+
+				<h3>An underdiagnosed condition with no universal cause that affects <a href='https://my.clevelandclinic.org/health/diseases/15252-delirium'>15 to 50 percent</a> of hospital patients, with especially <a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4774062/'>high prevalance among the elderly</a> population.</h3>
+
+				<p>Though delirium is a relatively common condition, it is highly misunderstood, with risk factors and triggers ranging from advanced age and dementia to surgery and medication. While elderly patients are significantly more likely to experience delirium, people of all ages are affected.</p>
+
+				<h1>Enter the Delirium Symptom Center:</h1>
+
+
+				<h3>A place to educate the public and caregivers about this condition. Featuring a resource guide to help you spot the signs of delirium, and a custom platform for caregivers to track symptoms and optimize care for patients with delirium.</h3>
+
+				<p>Get started by <a href='signup'>making an account</a> for an affected patient, and <a href='resources'>learning more</a> about this condition.</p>
+
+			</div>
+
+		</main>
+
+		<footer>
+			<p>© 2021 Megan Tian</p>
+		</footer>
+	</body>
+
+</html>

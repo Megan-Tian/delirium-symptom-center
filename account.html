@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="stylesheet" href="styles.css">
+		<script type="module" src="script.js"></script>
+
+		<link rel="shortcut icon" type="image/jpg" href="Logo.png" />
+		<title>Account</title>
+	</head>
+
+	<body>
+		<nav>
+			<ul>
+				{{#private}}
+					<!-- Visible IF user is LOGGED IN -->
+					<li><a onclick='logout()'>Logout</a></li>
+				{{/private}}
+
+				<li><a href='home'>Home</a></li>
+				<li><a href='resources'>Resources</a></li>
+
+				{{^private}}
+					<!-- Visible IF user is LOGGED OUT -->
+					<li><a href='signup'>Signup</a></li>
+					<li><a href='login'>Login</a></li>
+				{{/private}}
+
+				{{#private}}
+					<li><a href='track-symptoms'>Track Symptoms</a></li>
+					<li><a href='symptom-history'>Symptom History</a></li>
+					<li><a href='account'>Account</a></li>
+				{{/private}}
+			</ul>
+		</nav>
+
+
+		<main>
+			<div>
+				<!-- display patient info from signup using mustache templating -->
+				<!-- When viewing the database in Qoom's datbase table feature, the "-" orignally used to name fields in signup.html gets converted into "_"
+				Hence the discrepancy between account.html and signup.html
+				TODO Will fix this minor issue later -->
+
+				<h2>Patient Account</h2>
+				<h3>Patient Email/Account Username: {{username}}</h3>
+				
+				<h4>Patient Information</h4>
+				<p>First name: {{patient_first_name}}</p>
+				<p>Last name: {{patient_last_name}}</p>
+
+				<h4>Caregiver Information</h4>
+				<p>First name: {{caregiver_first_name}}</p>
+				<p>Last name: {{caregiver_last_name}}</p>
+				<p>Caregiver email: {{caregiver_email}}</p>
+
+				<h4>Patient Photo</h4>
+				<img src='{{profile_picture}}' width=20% height=20%>
+			</div>
+		</main>
+
+		<footer>
+			<p>© 2021 Megan Tian</p>
+		</footer>
+	</body>
+
+</html>

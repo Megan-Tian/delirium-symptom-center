@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="stylesheet" href="styles.css">
+		<script type="module" src="script.js"></script>
+
+		<link rel="shortcut icon" type="image/jpg" href="Logo.png" />
+		<title>Track Symptoms</title>
+	</head>
+
+	<body>
+		<nav>
+			<ul>
+				{{#private}}
+					<!-- Visible IF user is LOGGED IN -->
+					<li><a onclick='logout()'>Logout</a></li>
+				{{/private}}
+
+				<li><a href='home'>Home</a></li>
+				<li><a href='resources'>Resources</a></li>
+
+				{{^private}}
+					<!-- Visible IF user is LOGGED OUT -->
+					<li><a href='signup'>Signup</a></li>
+					<li><a href='login'>Login</a></li>
+				{{/private}}
+
+				{{#private}}
+					<li><a href='track-symptoms'>Track Symptoms</a></li>
+					<li><a href='symptom-history'>Symptom History</a></li>
+					<li><a href='account'>Account</a></li>
+				{{/private}}
+			</ul>
+		</nav>
+
+		<main>
+
+			<h1>Track Delirium Symptoms Over Time</h1>
+			<h2>About CAM</h2>
+			<p>This application utilizes the Confusion Assessment Method (CAM) test to track patients' symptoms and delirium "status". CAM is a standardized, efficient, and accurate procedure used to screen for delirium. Elderly patients should be frequently assessed to determine progression and severity. Read more about CAM <a href='https://www.va.gov/covidtraining/docs/The_Confusion_Assessment_Method.pdf'>here</a>.</p>
+
+			<p>The CAM exam should be administed by a trained healthcare professional. Once the test is complete, upload the results into the form below. To view a full history of the patient's CAM results, go the <a href='symptom-history'>symptom history</a> page.</p>
+
+			<div class="form">
+				<h2>Upload CAM Results</h2>
+
+				<form action="/~/delirium-symptom-center2/open/patient-data" method="POST" enctype="multipart/form-data">
+
+					<label>Confirm that CAM test results are for the patient below. Select the item if the correct patient information is displayed. Otherwise, log out and sign in with the correct account.</label><br>
+
+					<input type='radio' id='username' name='username' value={{username}} required>
+					<label for='username'>Patient name: {{patient_first_name}} {{patient_last_name}}<br>Account username: {{username}}</label><br>
+
+					<br><label>Indicate whether each feature of delirium was present in the patient at the time of assessment. Leave the checkbox blank if the feature was not observed.</label><br>
+
+					<input type='checkbox' id='feature1' name='feature1' value="acute onset">
+					<label for='feature1'>1. Acute onset or fluctuating course</label><br>
+
+					<input type='checkbox' id='feature2' name='feature2' value="inattention">
+					<label for='feature2'>2. Inattention</label><br>
+
+					<input type='checkbox' id='feature3' name='feature3' value="disorganized thinking">
+					<label for='feature3'>3. Disorganized thinking</label><br>
+
+					<input type='checkbox' id='feature4' name='feature4' value="altered level of consciousness">
+					<label for='feature4'>4. Altered level of consciousness</label><br>
+
+					<br><label>Once you add an entry, you will be redicted to the symptom history page.</label> <br>
+
+					<input type='hidden' name='redirecturl' value='/~/delirium-symptom-center2/symptom-history'>
+					<button>Submit</button>
+				</form>
+			</div>
+		</main>
+		<footer>
+			<p>© 2021 Megan Tian</p>
+		</footer>
+	</body>
+
+</html>

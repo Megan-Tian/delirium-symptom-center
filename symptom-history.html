@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="stylesheet" href="styles.css">
+		<script type="module" src="script.js"></script>
+
+		<link rel="shortcut icon" type="image/jpg" href="Logo.png" />
+		<title>Symptom History</title>
+	</head>
+
+	<body>
+		<nav>
+			<ul>
+				{{#private}}
+					<!-- Visible IF user is LOGGED IN -->
+					<li><a onclick='logout()'>Logout</a></li>
+				{{/private}}
+
+				<li><a href='home'>Home</a></li>
+				<li><a href='resources'>Resources</a></li>
+
+				{{^private}}
+					<!-- Visible IF user is LOGGED OUT -->
+					<li><a href='signup'>Signup</a></li>
+					<li><a href='login'>Login</a></li>
+				{{/private}}
+
+				{{#private}}
+					<li><a href='track-symptoms'>Track Symptoms</a></li>
+					<li><a href='symptom-history'>Symptom History</a></li>
+					<li><a href='account'>Account</a></li>
+				{{/private}}
+			</ul>
+		</nav>
+
+		<main>
+			<!-- OG HTML viz generated from the OpenDB tutorial is now in data-viz.md because it's a lot of code I don't want to delete yet and it wasn't letting me comment it all out in one giant block -->
+			<div>
+				<h1>Symptom History</h1>
+				<h3>{{username}}</h3>
+				<h2>Patient: {{patient_first_name}} {{patient_last_name}}</h2>
+				<p>*If no entries have be uploaded, the rest of this page will appear blank</p>
+			</div>
+
+			<div id="patient_data">
+				<!-- This is where data from the server (patient entries) goes. JS processes it so that only data from the user logged in appears -->
+			</div>
+
+		</main>
+		<footer>
+			<p>© 2021 Megan Tian</p>
+		</footer>
+	</body>
+
+</html>

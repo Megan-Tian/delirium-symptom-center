@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="stylesheet" href="styles.css">
+		<script type="module" src="script.js"></script>
+
+		<link rel="shortcut icon" type="image/jpg" href="Logo.png" />
+		<title>Resources</title>
+	</head>
+
+	<body>
+		<nav>
+			<ul>
+				{{#private}}
+					<!-- Visible IF user is LOGGED IN -->
+					<li><a onclick='logout()'>Logout</a></li>
+				{{/private}}
+
+				<li><a href='home'>Home</a></li>
+				<li><a href='resources'>Resources</a></li>
+
+				{{^private}}
+					<!-- Visible IF user is LOGGED OUT -->
+					<li><a href='signup'>Signup</a></li>
+					<li><a href='login'>Login</a></li>
+				{{/private}}
+
+				{{#private}}
+					<li><a href='track-symptoms'>Track Symptoms</a></li>
+					<li><a href='symptom-history'>Symptom History</a></li>
+					<li><a href='account'>Account</a></li>
+				{{/private}}
+			</ul>
+		</nav>
+
+		<main>
+			<h1>What is delirium?</h1>
+			<p><a href='https://my.clevelandclinic.org/health/diseases/15252-delirium'>Delirium</a> is a syndrome, or associated group of symptoms involving a sudden change in mental state. It is not a disease, nor is it equivalent to dementia. Delirium mostly affects attention, while dementia generall impacts memory.</p>
+
+			<h1><a href='https://www.mayoclinic.org/diseases-conditions/delirium/symptoms-causes/syc-20371386'>Symptoms</a></h1>
+
+			<div class="delirium_types">
+				<div class="delirium_types_smaller_grouping">
+					<h2>Hyperactive Delirium</h2>
+					<p>- Restlessness and agitation<br>
+						- Rapid mood changes<br>
+						- Hallucinations<br>
+						- Refusal to cooperate with care</p>
+				</div>
+
+				<div class="delirium_types_smaller_grouping">
+					<img src='chart.png' alt='delirium infographic with symptoms' height='350px' width='350px'>
+				</div>
+
+				<div class="delirium_types_smaller_grouping">
+					<h2>Hypoactive Delirium</h2>
+					<p>- Inactivity<br>
+						- Reduced motor activity<br>
+						- Sluggishness<br>
+						- Abnormal drowsiness</p>
+				</div>
+
+			</div>
+
+
+			<h2>Diagnosis</h2>
+			<p>Doctors use a variety of diagnostic tools, including psycological exams, blood, urine, MRI, and other tests. One common assessement is the Confusion Assessment Method (CAM), a standardized procedure that can be completed quickly and accurately by a trained professional. Learn more about the exam <a href='https://www.va.gov/covidtraining/docs/The_Confusion_Assessment_Method.pdf'>here</a>, and read a review of its efficacy <a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2585541/'>here</a>.</p>
+
+			<h1>Causes</h1>
+			<p>There are no direct causes for delirium. Typically patients will undergo a long period of stress, and some external factor will "trigger" symptoms. Such factors include surgery, inflammation, drug use, hospitalization, infection, and more. Since the "trigger" is often difficult to identify and isolate, <a href='https://bmchealthservres.biomedcentral.com/articles/10.1186/s12913-020-5005-1'>41.8-64%</a> of cases are misdianosed.</p>
+
+			<h2>Risk Factors</h2>
+			<p>Hospitalization and advanced age are the most significant risk factors for developing delirium. An estimated <a href='https://my.clevelandclinic.org/health/diseases/15252-delirium'>10-30%</a> of this population are affected.</p>
+
+			<h1><a href='https://www.mayoclinic.org/diseases-conditions/delirium/diagnosis-treatment/drc-20371391'>Treatment</a></h1>
+			<p>Non-pharmacologic interventions include placing familiar objects in the patient's room, helping them keep track of time with large calendars, and encouraging movement to help re-establish regular sleep habits.</p>
+
+			<p>Pharcologic interventions typically focus on addressing underlying "triggers" of delirium. These include prescribing antibiotics, supplemental vitamins, and other medications. Antipsychotic drugs may occasionally be prescribed to help patients with poor sleep.</p>
+
+			<h2>Why the Delirium Symptom Center</h2>
+			<p>Delirium is hard to identify and treat. It requires a full-time team to engage and support patient recovery. The goal of the Symptom Center is to make information about delirium more accessible and available. Additionally, by hosting tools like the patient symptom tracker, caregivers are better equipped to monitor the patients' delicate recovery process.</p>
+			<p>In the long term, by educating the public and supporting caregivers, the Delirium Symptom Center will ensure that our most vulnerable patients have access to the high-quality care they need. This will reduce <a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2845764/'>mortality rates</a> associated with the condition, as well as potential long-term impacts like <a href='https://www.bmj.com/content/350/bmj.h2538'>cognitive impairment and dementia</a>.</p>
+
+		</main>
+
+		<footer>
+			<p>© 2021 Megan Tian</p>
+		</footer>
+	</body>
+
+</html>

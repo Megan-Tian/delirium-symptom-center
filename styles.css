@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+	font-family: 'Open Sans', sans-serif;
+}
+
+body {
+	background: white;
+	margin: 0px;
+	padding: 0px;
+	min-height: 100%;
+}
+
+
+/* Only used for "delirium" title + logo on home.html */
+header {
+	padding: 0.5em;
+	padding-right: 15%;
+	padding-left: 15%;
+
+	display: flex;
+	align-items: flex-start;
+	flex-wrap: wrap-reverse;
+	/* so logo goes on top when wrapping */
+	justify-content: space-between;
+	/* so that logo is aligned with the rightmost side */
+}
+
+footer {
+	bottom: 0;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	text-align: center;
+	width: 100%;
+	color: #808080;
+}
+
+main {
+	padding: 0.5em;
+	padding-right: 15%;
+	padding-left: 15%;
+}
+
+main div {
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+
+main div>img {
+	align-items: center;
+}
+
+/* RESOURCES PAGE */
+.delirium_types {
+	display: flex;
+	display: inline-block;
+	align-items: flex-start;
+	flex-direction: column;
+}
+
+.delirium_types_smaller_grouping {
+	display: flex;
+	justify-content: space-between;
+	vertical-align: top;
+	display: inline-block;
+	align-items: flex-start;
+	padding-right: 4em;
+}
+
+/* SYMPTOM HISTORY PAGE */
+#patient_data {
+	background-color: #004aad15;
+}
+
+/*
+.dsc_with_logo {
+	display: inline-block;
+	align-items: flex-start;
+}
+*/
+
+.patient_table_single_entry {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	padding: 2em;
+}
+
+.entry_features {
+	display: inline-block;
+}
+
+/* CHECKBOX on symptom tracking form */
+lable,
+input {
+	vertical-align: middle;
+	display: inline-block;
+}
+
+/* FORMS - div class just for forms*/
+.form {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+
+	padding: 0.5em;
+	margin: 0px;
+}
+
+main form input {
+	justify-content: center;
+	width: 100%;
+	margin: 0.5em;
+	padding: 1em;
+	border-radius: 3px;
+	border: none;
+	box-sizing: border-box;
+	background-color: #dfdfdf75;
+}
+
+/* submit button without hover is light grey */
+main form input[type=submit] {
+	background-color: #cce7f1;
+	cursor: pointer;
+}
+
+/* submit button WITH hover is translucent white */
+main form input[type=submit]:hover {
+	background-color: #004aad50;
+	cursor: pointer;
+}
+
+/* NAVIGATION BAR 
+Reference: https://www.w3schools.com/css/css_navbar_horizontal.asp */
+ul {
+	list-style-type: none;
+	margin: 0;
+	overflow: hidden;
+	background-color: #cce7f1;
+	width: 100%;
+}
+
+li {
+	padding: 0.3em;
+	padding-left: 1.0em;
+	padding-right: 1.0em;
+	text-decoration: none;
+	display: inline;
+	float: right;
+	border-left: 2px solid #004aad;
+}
+
+li:last-child {
+	border-left: none;
+}
+
+li:first-child {
+	padding-right: 3em;
+}
+
+li:hover {
+	background-color: #004aad;
+}
+
+li a {
+	display: block;
+	padding: 8px;
+	color: #004aad;
+	text-decoration: none;
+}
+
+li a:hover {
+	color: white;
+}

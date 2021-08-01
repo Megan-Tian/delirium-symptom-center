@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="stylesheet" href="styles.css">
+		<script type="module" src="script.js"></script>
+
+		<link rel="shortcut icon" type="image/jpg" href="Logo.png" />
+		<title>Signup</title>
+	</head>
+
+	<body>
+		<nav>
+			<ul>
+				{{#private}}
+					<!-- Visible IF user is LOGGED IN -->
+					<li><a onclick='logout()'>Logout</a></li>
+				{{/private}}
+
+				<li><a href='home'>Home</a></li>
+				<li><a href='resources'>Resources</a></li>
+
+				{{^private}}
+					<!-- Visible IF user is LOGGED OUT -->
+					<li><a href='signup'>Signup</a></li>
+					<li><a href='login'>Login</a></li>
+				{{/private}}
+
+				{{#private}}
+					<li><a href='track-symptoms'>Track Symptoms</a></li>
+					<li><a href='symptom-history'>Symptom History</a></li>
+					<li><a href='account'>Account</a></li>
+				{{/private}}
+			</ul>
+		</nav>
+
+		<main>
+			<div class='form'>
+				<h2>Sign Up</h2>
+				<!-- Account is under patient email and password. Additional information abt caregiver, etc. is included in signup but not in login so that if the patient changes settings (ie. hospital to home with relative providing care), they can still log in with the same credentials-->
+				<form action='/~/delirium-symptom-center/signup' method='POST' enctype='multipart/form-data'>
+
+					<label>Create one account for each patient. Make sure to remember the patient's email and password to log in at a later time.</label><br>
+
+					<input type='email' name='username' placeholder='Patient Email' required><br>
+					<input type='patient-first-name' name='patient-first-name' placeholder='Patient First Name' required><br>
+					<input type='patient-last-name' name='patient-last-name' placeholder='Patient Last Name' required><br>
+
+					<input type='email' name='caregiver-email' placeholder='Caregiver Email' required><br>
+					<input type='caregiver-first-name' name='caregiver-first-name' placeholder='Caregiver First Name' required><br>
+					<input type='caregiver-last-name' name='caregiver-last-name' placeholder='Caregiver Last Name' required><br>
+
+
+					<input type='password' name='password' placeholder='Account Password' required><br>
+
+					<label>Add a recent picture of the patient</label><br>
+
+					<input type='file' assets='image/*' name='profile-picture' required><br>
+					<input type='submit' value='Sign up'>
+
+					<input type='hidden' name='redirecturl' value='/~/delirium-symptom-center/account'>
+				</form>
+			</div>
+		</main>
+		<footer>
+			<p>© 2021 Megan Tian</p>
+		</footer>
+	</body>
+
+</html>

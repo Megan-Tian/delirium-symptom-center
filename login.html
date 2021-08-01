@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="stylesheet" href="styles.css">
+		<script type="module" src="script.js"></script>
+
+		<link rel="shortcut icon" type="image/jpg" href="Logo.png" />
+		<title>Login</title>
+	</head>
+
+	<body>
+		<nav>
+			<ul>
+				{{#private}}
+					<!-- Visible IF user is LOGGED IN -->
+					<li><a onclick='logout()'>Logout</a></li>
+				{{/private}}
+
+				<li><a href='home'>Home</a></li>
+				<li><a href='resources'>Resources</a></li>
+
+				{{^private}}
+					<!-- Visible IF user is LOGGED OUT -->
+					<li><a href='signup'>Signup</a></li>
+					<li><a href='login'>Login</a></li>
+				{{/private}}
+
+				{{#private}}
+					<li><a href='track-symptoms'>Track Symptoms</a></li>
+					<li><a href='symptom-history'>Symptom History</a></li>
+					<li><a href='account'>Account</a></li>
+				{{/private}}
+			</ul>
+		</nav>
+
+		<main>
+			<div class="form">
+				<h2>Log In</h2>
+
+				<form action='/~/delirium-symptom-center/login' method='POST' enctype='multipart/form-data'>
+
+					<label>Log in with the patient's email (username) and password associated with their account.</label>
+
+					<!-- Username and password are mandatory to log in -->
+					<!-- Save the login username (id="current_user") to use later in script.js to hide entries that this user did NOT upload to the server-->
+					<input id="current_user" type='email' name='username' placeholder='Patient Email/Username' required>
+
+
+					<input type='password' name='password' placeholder='Password' required>
+
+					<!-- Trying to use onclick to get the name field
+					<input type='submit' onclick="getCurrentUser()" value='Log In'>
+					-->
+
+					<input type='submit' value='Log In'>
+
+					<!-- Set a redirect page that a user goes to after signing up, change PAGENAME2REDIRECT to what you want -->
+					<input type='hidden' name='redirecturl' value='/~/delirium-symptom-center/account'>
+				</form>
+			</div>
+
+			<script src='script.js'>
+		<!--	currentUser = document.getElementById("current_user")
+					.value; <
+					alert(currentUser);-- >
+				
+			</script>
+		</main>
+		<footer>
+			<p>© 2021 Megan Tian</p>
+		</footer>
+	</body>
+
+</html>
