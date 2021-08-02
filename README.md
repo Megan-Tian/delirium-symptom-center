@@ -1,7 +1,7 @@
 Delirium Symptom Center
 ==================
 ## Inspiration
-I'm taking a biomedical problem-based learning class this summer, and our first case (around mid-July) was about delirium. That's where I first learned about it and got the sense that we can address some of the issues described in this site with technology. 
+I'm taking a biomedical problem-based learning class this summer, and our first case (around mid-July) was about delirium, a sudden change in mental state with no universal cause. That's where I first learned about it and got the sense that we can address some of the issues described in this site with technology. 
 
 ## What this project does
 1. Educates the public about delirium, a common syndrome without a universal cause that is frequently misunderstood and misdiagnosed
