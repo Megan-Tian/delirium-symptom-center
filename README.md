@@ -47,3 +47,6 @@ No code in this project was copied from any of these places. I am simply sharing
 [Qoom Tutorial: Build a Real Login System for Your Website](https://app.qoom.io/tutorials/login-system/guide.md)
 
 [W3Schools: CSS Flexbox](https://www.w3schools.com/css/css3_flexbox.asp)
+
+### Logo
+The logo was created with elements available on Canva
