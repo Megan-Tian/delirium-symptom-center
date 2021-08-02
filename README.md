@@ -1,5 +1,7 @@
 Delirium Symptom Center
 ==================
+## Submitted to GSB Hacks 2021
+
 ## Inspiration
 I'm taking a biomedical problem-based learning class this summer, and our first case (around mid-July) was about delirium, a sudden change in mental state with no universal cause. That's where I first learned about it and got the sense that we can address some of the issues described in this site with technology. 
 
@@ -29,6 +31,10 @@ I also learned how to use mutache templating and two of Qoom's database APIs (Au
 
 ## What is next for this project
 After fixing the JS filter, I plan on adding a function to either text or email the caregiver at certain times to check in on the patient. One reason why this would be useful is that patients often have irregular sleep schedules due to both the delirium and the lack of exercise from laying in a hospital bed most of the day. Reminding the resident on duty to encourage their patients to move around a bit during the afternoon is a good way to help patients sleep at night. Re-establishing sleep patterns and regularity is a key component to successful recovery.
+
+## Links to project
+Devpost: https://devpost.com/software/delirium-symptom-center
+Site: https://smoothsea46.qoom.space/~/delirium-symptom-center2/home
 
 ## References
 No code in this project was copied from any of these places. I am simply sharing them here so that others can also make use of these guides to get started on future projects.
