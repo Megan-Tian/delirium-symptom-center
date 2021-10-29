@@ -1,5 +1,8 @@
 Delirium Symptom Center
 ==================
+
+*Update October 2021: The "Symptom History" page is currently under construction. I am in the process of moving to a different code editor, which requires me to redo large portions of the backend that were originally taken care of by the editor I was previously using. The old site (not updated) that was orignally submited to GSB Hacks can be viewed here: https://smoothsea46.qoom.space/~/delirium-symptom-center2/home. 
+
 ## Submitted to GSB Hacks 2021
 
 ## Inspiration
